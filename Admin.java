@@ -28,7 +28,8 @@ public class Admin {
             String password = new String(passwordField.getPassword());
 
             // Check credentials
-            if (username.equals("VAK") && password.equals("12345")) {
+            if (username.equals(System.getenv("AIRLINE_ADMIN_USER"))
+                    && password.equals(System.getenv("AIRLINE_ADMIN_PASSWORD"))) {
                 showAdminPanel();
             } else {
                 JOptionPane.showMessageDialog(null, "Invalid username or password!", "Login Error", JOptionPane.ERROR_MESSAGE);
